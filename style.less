@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+@primary-color: hsl(223, 87%, 63%);
+@secondary-color: hsl(223, 100%, 88%);
+@third-color: hsl(354, 100%, 66%);
+
+@gray: hsl(0, 0%, 59%);
+@very-dark-blue: hsl(209, 33%, 12%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+body {
+  font-size: 20px;
+  width: 100%;
+  display: grid;
+}
+
+.ping {
+  &__flex {
+    display: flex;
+  }
+
+  &__container {
+    justify-self: center;
+    max-width: 375px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 56px 0;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: @very-dark-blue;
+    padding: 3rem 0;
+
+    em {
+      font-style: normal;
+      color: @primary-color;
+    }
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    font-weight: 300;
+    color: @gray;
+    margin-bottom: 1.5rem;
+
+    em {
+      font-style: normal;
+      font-weight: 700;
+      color: @very-dark-blue;
+    }
+  }
+
+  &__description {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+
+    & input,
+    & button {
+      border-radius: 24px;
+      padding: 12px 36px;
+      font-size: 1rem;
+    }
+  }
+
+  &__input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  &__input {
+    border: 1px solid @secondary-color;
+
+    &::placeholder {
+      color: @secondary-color;
+    }
+
+    &:invalid {
+      border: 1px solid @third-color;
+    }
+  }
+
+  &__invalid-message {
+    font-size: 0.75rem;
+    color: @third-color;
+    text-align: center;
+    font-style: italic;
+    display: none;
+  }
+
+  &__submit {
+    border: none;
+    background-color: @primary-color;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      filter: opacity(0.8);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__illustration {
+    width: 110%;
+    padding: 5rem 0;
+  }
+
+  &__social {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 2rem;
+
+    & a {
+      appearance: none;
+      height: 38px;
+      border: 0.5px solid hsla(0, 0%, 59%, 0.5);
+      border-radius: 50%;
+      padding: 0.5rem;
+      color: @primary-color !important;
+    }
+
+    & a:hover {
+      background-color: @primary-color;
+      color: white !important;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__footer {
+    font-size: 0.75rem;
+    color: @gray;
+  }
+}
+
+@media (min-width: 1190px) {
+  .ping {
+    &__container {
+      width: 50%;
+      max-width: 1440px;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 12px;
+      width: 100%;
+
+      & input,
+      & button {
+        padding: 16px 36px;
+      }
+
+      & > input {
+        flex-basis: 65%;
+      }
+
+      & > button {
+        flex-basis: 35%;
+      }
+    }
+
+    &__invalid-message {
+      text-align: left;
+    }
+
+    &__illustration {
+      width: 100%;
+    }
+  }
+}

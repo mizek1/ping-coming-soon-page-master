@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet/less" type="text/css" href="style.less" />
+    <title>Frontend Mentor | Ping coming soon page</title>
+  </head>
+  <body>
+    <main class="ping__container">
+      <h1 class="ping__title">PING<em>.</em></h1>
+      <h2 class="ping__subtitle">We are launching <em>soon!</em></h2>
+      <h3 class="ping__description">Subscribe and get notified</h3>
+      <form class="ping__form">
+        <div class="ping__input-group">
+          <input
+            class="ping__input"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your email address..."
+          />
+          <span class="ping__invalid-message"
+            >Please provide a valid email address</span
+          >
+        </div>
+        <button class="ping__submit" type="submit">Notify Me</button>
+      </form>
+      <img
+        class="ping__illustration"
+        src="./images/illustration-dashboard.png"
+        alt="illustration dashboard"
+      />
+      <section class="ping__social">
+        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+      </section>
+      <footer class="ping__footer">
+        &copy; Copyright Ping. All rights reserved.
+      </footer>
+    </main>
+    <script>
+      const form = document.querySelector('.ping__form');
+      const input = document.querySelector('.ping__input');
+      const invalidMessage = document.querySelector('.ping__invalid-message');
+
+      input.addEventListener('change', (e) => {
+        e.preventDefault();
+        if (!input.validity.valid) {
+          invalidMessage.style.display = 'block';
+        } else {
+          invalidMessage.style.display = 'none';
+        }
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/less@4"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
